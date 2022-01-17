@@ -1,0 +1,55 @@
+version: '3'
+
+services:
+  mariadb-master:
+    container_name: $FIRST_DB_NAME
+    image: mariadb:latest
+    restart: unless-stopped
+    volumes:
+      - 'db_master_data:/var/lib/mysql'
+      - './first-host.cnf:/etc/mysql/conf.d/mysql.cnf'
+    environment:
+      MARIADB_ROOT_PASSWORD: $FIRST_ROOT_PASSWORD
+    ports:
+      - "$IP_ADDR:3306:3306"
+    networks:
+      - db-stack
+    mem_limit: 2G
+    labels:
+      app.docker.created: "Hossein Yousefi"
+      app.docker.env: "production"
+      app.docker.service: "database"
+
+  mariadb-slave:
+    container_name: $SECOND_DB_NAME
+    image: mariadb:latest
+    restart: unless-stopped
+    volumes:
+      - 'db_slave_data:/var/lib/mysql'
+      - './second-host.cnf:/etc/mysql/conf.d/mysql.cnf'
+    environment:
+      MARIADB_ROOT_PASSWORD: $SECOND_ROOT_PASSWORD
+    ports:
+      - "$IP_ADDR:3307:3306"
+    networks:
+      - db-stack
+    mem_limit: 2G
+    labels:
+      app.docker.created: "Hossein Yousefi"
+      app.docker.env: "production"
+      app.docker.service: "database"
+
+volumes:
+  db_master_data:
+    name: db_master_data
+    driver: local
+
+  db_slave_data:
+    name: db_slave_data
+    driver: local
+
+networks:
+  db-stack:
+    name: db-stack
+    driver: bridge
+

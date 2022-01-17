@@ -1,0 +1,14 @@
+# mariadb automated replication by Hosein Yousefi <yousefi.hosein.o@gmail.com>
+# GITHUB: https://github.com/hosein-yousefii
+
+
+[mysqld]
+default_authentication_plugin= mysql_native_password
+
+# these configs are mandatory, Don't change them.
+# able to add other configs at the end of this file.
+bind-address = 0.0.0.0
+log-bin         = master-bin
+binlog_format   = mixed
+server-id       = 1
+
