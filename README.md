@@ -95,10 +95,10 @@ export MARIADB_FIRST_ROOT_PASS='qazwsx'
 # Root password for master2 DB.
 export MARIADB_SECOND_ROOT_PASS='qazwsx'
 
-# Master container address (it depends on the container name "MARIADB_FIRST_DB_NAME" and should be same. You can specify IP addr instead "NOT RECOMMENDED").
+# Master1 container address (it depends on the container name "MARIADB_FIRST_DB_NAME" and should be same. You can specify IP addr instead "NOT RECOMMENDED").
 export MARIADB_FIRST_HOST='db-master1'
 
-# Slave container address (it depends on the container name "MARIADB_SECOND_DB_NAME" and should be same. You can specify IP addr instead "NOT RECOMMENDED").
+# Master2 container address (it depends on the container name "MARIADB_SECOND_DB_NAME" and should be same. You can specify IP addr instead "NOT RECOMMENDED").
 export MARIADB_SECOND_HOST='db-master2'
 
 # Your docker bridge IP addr on host.
