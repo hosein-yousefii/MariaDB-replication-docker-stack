@@ -10,11 +10,11 @@ Implementing a master-master or master-slave mariadb replication is always a cha
 
 ## What is MariaDB?
 
-MySQL Database Service is a fully managed database service to deploy cloud-native applications.
+MariaDB Database Service is a fully managed database service to deploy cloud-native applications.
 
 ### What is master-slave replication?
 
-MySQL replication is the process by which a single data set, stored in a MySQL database, will be live-copied to a second server. This configuration, called “master-slave” replication, is a typical setup.
+MariaDB replication is the process by which a single data set, stored in a MySQL database, will be live-copied to a second server. This configuration, called “master-slave” replication, is a typical setup.
 
 ### What is master-master replication?
 
